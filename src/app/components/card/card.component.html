@@ -1,0 +1,29 @@
+<form class="example-form" style="margin:20px;">
+    <mat-form-field class="example-full-width">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name" #name/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Rollno</mat-label>
+        <input matInput placeholder="Rollno" #rollno/>
+      </mat-form-field>
+
+      <button [disabled]="!(name.value && rollno.value)" (click)="onAdd(name.value,rollno.value)">Add</button>
+      <br/>
+  </form>
+  <hr/>
+  
+
+<ng-container *ngFor="let user of Users">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title style="color:white">{{user.name}}</mat-card-title>
+          <mat-card-subtitle>{{user.rollno}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+          <button mat-button (click)="onDelete(user.rollno)">Delete</button>
+        </mat-card-actions>
+    </mat-card>
+</ng-container>
+

@@ -1,0 +1,9 @@
+<ol class="list-group" (click)="onSelected()">
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">{{recipe.name}}</div>
+        {{recipe.description}}
+      </div>
+      <img [src]="recipe.imagePath" alt="{{recipe.imagePath}}" class="img-responsive" style="max-height:50px"/>
+    </li>
+</ol>
